@@ -17,7 +17,7 @@ public class SwaggerConfig {
 	public Docket api() {
 		 
 		return new Docket(DocumentationType.SWAGGER_2).select()
-				.apis(RequestHandlerSelectors.basePackage("com.rrayco.reservarestauranteapi.*"))
+				.apis(RequestHandlerSelectors.basePackage("com.rrayco.reservarestauranteapi"))
 				.paths(PathSelectors.any()).build();
 
 	}
