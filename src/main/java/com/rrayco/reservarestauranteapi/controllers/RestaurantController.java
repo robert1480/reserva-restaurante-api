@@ -1,5 +1,7 @@
 package com.rrayco.reservarestauranteapi.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -14,7 +16,7 @@ import com.rrayco.reservarestauranteapi.responses.BookingResponse;
 import com.rrayco.reservarestauranteapi.services.RestaurantService;
 
 @RestController
-@RequestMapping(path = "/booking-restaurant" + "v1")
+@RequestMapping(path = "/booking-restaurant" + "/v1")
 public class RestaurantController {
 	
 	@Autowired
@@ -26,6 +28,12 @@ public class RestaurantController {
 	public BookingResponse<RestaurantRest> getRestaurantById(Long restaurantId) throws BookingException {
 		return new BookingResponse<>("Success", String.valueOf(HttpStatus.OK), "OK",
 				restaurantService.getRestaurantById(restaurantId));
+	}
+	
+	@ResponseStatus(HttpStatus.OK)
+	@RequestMapping(value = "restaurants", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	public BookingResponse<List<RestaurantRest>> getRestaurants() throws BookingException{
+		return new BookingResponse<>("Succes", String.valueOf(HttpStatus.OK), "OK", restaurantService.getRestaurants());
 	}
 
 }

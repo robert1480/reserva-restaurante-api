@@ -27,8 +27,8 @@ public class Restaurant {
 	@Column(name="DESCRIPTION")
 	private String description;
 	
-	@Column(name="ADRESS")
-	private String adress;
+	@Column(name="ADDRESS")
+	private String address;
 	
 	@Column(name="IMAGE")
 	private String image;
@@ -69,12 +69,12 @@ public class Restaurant {
 		this.description = description;
 	}
 
-	public String getAdress() {
-		return adress;
+	public String getAddress() {
+		return address;
 	}
 
-	public void setAdress(String adress) {
-		this.adress = adress;
+	public void setAddress(String address) {
+		this.address = address;
 	}
 
 	public String getImage() {
