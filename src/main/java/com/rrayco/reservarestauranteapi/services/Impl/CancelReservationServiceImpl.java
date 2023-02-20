@@ -3,6 +3,7 @@ package com.rrayco.reservarestauranteapi.services.Impl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.rrayco.reservarestauranteapi.exceptions.BookingException;
 import com.rrayco.reservarestauranteapi.exceptions.InternalServerErrorException;
@@ -11,7 +12,7 @@ import com.rrayco.reservarestauranteapi.repositories.ReservationRepository;
 import com.rrayco.reservarestauranteapi.services.CancelReservationService;
 
  
-
+@Service
 public class CancelReservationServiceImpl implements CancelReservationService {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(CancelReservationServiceImpl.class);
