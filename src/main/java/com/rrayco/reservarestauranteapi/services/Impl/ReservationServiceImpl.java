@@ -12,7 +12,7 @@ import com.rrayco.reservarestauranteapi.exceptions.InternalServerErrorException;
 import com.rrayco.reservarestauranteapi.exceptions.NotFountException;
 import com.rrayco.reservarestauranteapi.jsons.CreateReservationRest;
 import com.rrayco.reservarestauranteapi.jsons.ReservationRest;
-import com.rrayco.reservarestauranteapi.repositories.ReservationRepositoy;
+import com.rrayco.reservarestauranteapi.repositories.ReservationRepository; 
 import com.rrayco.reservarestauranteapi.repositories.RestaurantRepository;
 import com.rrayco.reservarestauranteapi.repositories.TurnRepository;
 import com.rrayco.reservarestauranteapi.services.ReservationService;
@@ -30,7 +30,7 @@ public class ReservationServiceImpl implements ReservationService {
 	private TurnRepository turnRepository;
 
 	@Autowired
-	private ReservationRepositoy reservationRepository;
+	private ReservationRepository reservationRepository;
 
 	@Override
 	public ReservationRest getReservation(Long reservationId) throws BookingException {
